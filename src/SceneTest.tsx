@@ -1,7 +1,7 @@
-import { Vector3, Color4, Texture, CubeTexture, Color3 } from "@babylonjs/core";
-import { Engine, Scene, Skybox } from "react-babylonjs";
+import { Color4, CubeTexture, Texture, Vector3 } from "@babylonjs/core";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Engine, Scene } from "react-babylonjs";
 import RetroComputer from "./RetroComputer";
-import { useRef, useCallback, useState, useEffect } from "react";
 
 export const SceneTest = () => {
   const [_, setTexturesLoaded] = useState(false);
