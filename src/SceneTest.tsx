@@ -8,6 +8,7 @@ export const SceneTest = () => {
   const [zoom, setZoom] = useState(30);
   const cubeTextureRef = useRef<CubeTexture | undefined>(undefined);
   const cubeTextureCloneRef = useRef<CubeTexture | undefined>(undefined);
+  const targetZoom = 7;
 
   const cubeTextureCallback = useCallback((node: CubeTexture | null) => {
     if (node) {
@@ -24,8 +25,8 @@ export const SceneTest = () => {
   }, []);
 
   useEffect(() => {
-    if (zoom > 6) {
-      setZoom((prev) => prev - Math.abs(6 - zoom) * 0.001);
+    if (zoom > targetZoom) {
+      setZoom((prev) => prev - Math.abs(targetZoom - zoom) * 0.001);
     }
   }, [zoom]);
   return (
